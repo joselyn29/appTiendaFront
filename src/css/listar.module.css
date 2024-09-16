@@ -1,0 +1,63 @@
+.cajaListaDeProductos {
+    width: 100%;
+    padding: 25px;
+}
+
+.cajaListaDeProductos table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Nunito', sans-serif;
+   
+}
+.cajaListaDeProductos th{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffff;
+}
+.cajaListaDeProductos th, .cajaListaDeProductos td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: start;
+
+}
+
+.cajaListaDeProductos th {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.cajaListaDeProductos td {
+    background-color: #ffffff; /* Fondo blanco para las filas de productos */
+    color: #333333;
+    font-size: 20px;
+}
+
+.cajaListaDeProductos tr:hover td {
+    background-color: #5adc67ad; /* Fondo verde claro cuando se pasa el mouse sobre la fila */
+}
+
+.cajaListaDeProductos button {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.cajaListaDeProductos button:hover {
+    background-color: #4fbc5c; /* Color más oscuro al pasar el mouse */
+}
+
+.cajaListaDeProductos button:focus {
+    outline: none;
+}
+
+.cajaListaDeProductos button:active {
+    background-color: #0d5330; /* Color aún más oscuro al hacer clic */
+}
