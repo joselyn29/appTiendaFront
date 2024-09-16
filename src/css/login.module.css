@@ -1,0 +1,87 @@
+/* login.module.css */
+
+/* Estilos generales del contenedor del formulario */
+.formContainer {
+  color: #268667;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Estilos para el título del formulario */
+.formTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.formLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Estilos para los campos del formulario */
+.formControl {
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilos para el botón de envío */
+.btnPrimary {
+  background-color: #85CA83;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Estilo para el botón de envío en hover */
+.btnPrimary:hover {
+  background-color: #1aca40;
+}
+
+/* Estilos para mensajes de error */
+.errorMessage {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .formContainer {
+    margin: 20px 35px;
+  }
+  .formControl {
+    height: 30px;
+  }
+  .btnPrimary {
+    padding: 5px 10px;
+  }
+}
+
+/* Media queries para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+  .formContainer {
+    margin: 20px 35px;
+    padding: 10px;
+  }
+  .formControl {
+    height: 25px;
+    font-size: 14px;
+  }
+  .btnPrimary {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}

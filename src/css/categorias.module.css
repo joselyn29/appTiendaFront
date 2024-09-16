@@ -1,0 +1,94 @@
+/* Estructura básica del contenedor principal */
+.principalCategorias {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center; /* Centra el contenido */
+}
+
+/* Estilo del título */
+.tituloCategoria {
+  display: flex;
+  justify-content: center;
+  color: #0B513B;
+  font-size: 2rem;
+}
+
+/* Grid principal para las categorías */
+.categoriasGrid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas grandes */
+  gap: 5px; /* Reduce el espacio entre las imágenes */
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el grid */
+}
+
+/* Estilo de las imágenes */
+.categoriaImg {
+  width: 60%; /* Aumenta ligeramente el tamaño de las imágenes */
+  height: auto;
+  object-fit: cover; /* Mantiene proporciones sin distorsionar */
+  display: block;
+  margin: 0 auto; /* Centra la imagen */
+  padding: 5px; /* Agrega un pequeño relleno alrededor de las imágenes */
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .principalCategorias {
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .categoriasGrid {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 5px; /* Reduce más el espacio entre las imágenes */
+  }
+
+  .categoriaImg {
+    width: 75%; /* Aumenta el ancho en pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+  .principalCategorias {
+    margin-top: 30px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .categoriasGrid {
+    grid-template-columns: repeat(4, 1fr); /* Tres columnas */
+    gap: 5px; /* Mantiene el espacio reducido entre imágenes */
+  }
+
+  .categoriaImg {
+    width: 60%;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+  .principalCategorias {
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .categoriasGrid {
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    gap: 5px; /* Reduce el espacio entre las imágenes */
+  }
+
+  .categoriaImg {
+    width: 50%;
+  }
+}

@@ -1,0 +1,31 @@
+.shippingPolicy {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.subtitulo {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.texto {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .titulo {
+      font-size: 20px;
+  }
+
+  .subtitulo {
+      font-size: 18px;
+  }
+}

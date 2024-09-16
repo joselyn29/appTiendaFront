@@ -1,0 +1,33 @@
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  margin-top: 10px;
+}
+
+.colorTitulo {
+  color: #0B513B;
+  margin-top: 10px;
+}
+
+.mapContainer {
+  position: relative;
+  height: auto; /* Ajusta según sea necesario */
+}
+
+.mapContainer .leafletContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.whatsappLink {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+.whatsappLink:hover {
+  color: #85CA83; /* Cambia el color al pasar el mouse, opcional */
+}
+
+
+

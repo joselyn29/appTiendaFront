@@ -1,0 +1,25 @@
+.btnPrimary{
+  width: 100%;
+  background-color: #85CA83;
+  color: white;
+}
+
+.btnPrimary:hover{
+  background-color: #4dc749 ;
+}
+
+.btnCarrito{
+  width: 100%;
+  border: 1px solid #85CA83;
+  color: black;
+}
+
+.btnCarrito:hover{
+  background-color: #d4f0d3;
+}
+
+.cancelIcon {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}

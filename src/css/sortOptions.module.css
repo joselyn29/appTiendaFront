@@ -1,0 +1,26 @@
+/* SortOptions.module.css */
+.sortContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.select:hover {
+  border-color: #888;
+  background-color: #f1f1f1;
+}

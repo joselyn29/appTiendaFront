@@ -1,0 +1,40 @@
+/* Contenedor Principal del Texto */
+.textoNosotros {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  min-height: calc(100vh - 170px); 
+  margin-top: 20px;
+  box-sizing: border-box; 
+  color: #0B513B;
+}
+
+/* Contenido de la Sección Nosotros */
+.nosotros {
+  max-width: 800px; /* Controla el ancho máximo del contenido */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilos para el título h2 */
+.h2Title {
+  text-align: center; /* Centra el título */
+  margin-bottom: 20px; /* Ajusta el margen inferior del título para crear espacio entre el título y los párrafos */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .textoNosotros {
+    padding: 10px; /* Reduce el relleno en pantallas más pequeñas */
+    margin-top: 0; /* Elimina el margen superior en pantallas más pequeñas si es necesario */
+  }
+
+  .nosotros {
+    width: 90%; /* Asegura que el contenido ocupe el 90% del ancho en pantallas pequeñas */
+  }
+
+  .h2Title {
+    margin: 15px 0; /* Ajusta el margen del título en pantallas más pequeñas */
+  }
+}

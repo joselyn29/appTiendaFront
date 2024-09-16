@@ -1,0 +1,93 @@
+.misionContainer {
+  display: flex;
+  flex-direction: column; /* Cambiado a columna para mejor adaptabilidad en pantallas pequeñas */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Ajustado el padding para que sea más adaptable */
+  background-color: #d8f0d5; /* Color de fondo */
+  width: 100%;
+  height: auto; /* Ajustado para permitir que el contenedor crezca según el contenido */
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px; /* Controla el ancho máximo del contenido para una mejor legibilidad */
+  margin: 20px; /* Espacio entre secciones */
+}
+
+.tituloMisionVision {
+  font-size: 24px;
+  color: #2b5d34;
+  margin-bottom: 10px;
+  text-align: center; /* Centra el título en pantallas pequeñas */
+}
+
+.textoMisionVision {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #3a6b44;
+  text-align: justify; /* Justifica el texto del párrafo */
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 1024px) {
+  .misionContainer {
+    padding: 40px; /* Aumenta el padding en pantallas grandes */
+    flex-direction: row; /* Cambia a fila en pantallas grandes */
+  }
+
+  .content {
+    margin: 40px; /* Aumenta el margen en pantallas grandes */
+  }
+
+  .tituloMisionVision {
+    font-size: 28px; /* Tamaño de fuente mayor en pantallas grandes */
+  }
+
+  .textoMisionVision {
+    font-size: 18px; /* Tamaño de fuente mayor en pantallas grandes */
+  }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .misionContainer {
+    padding: 30px; /* Ajusta el padding para pantallas medianas */
+  }
+
+  .content {
+    margin: 30px; /* Ajusta el margen para pantallas medianas */
+  }
+
+  .tituloMisionVision {
+    font-size: 26px; /* Tamaño de fuente ajustado para pantallas medianas */
+  }
+
+  .textoMisionVision {
+    font-size: 16px; /* Tamaño de fuente ajustado para pantallas medianas */
+  }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+  .misionContainer {
+    padding: 25px; /* Aumenta el padding para evitar que el contenido se vea muy cerca de los bordes */
+    width: 100%;
+    box-sizing: border-box; /* Asegúrate de que el padding se incluya en el ancho total del contenedor */
+  }
+
+  .content {
+    margin: 15px; /* Aumenta el margen para proporcionar más espacio alrededor del contenido */
+  }
+
+  .tituloMisionVision {
+    font-size: 20px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+    margin-bottom: 15px; /* Aumenta el espacio debajo del título */
+  }
+
+  .textoMisionVision {
+    font-size: 14px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+    line-height: 1.8; /* Ajusta la altura de línea para mejorar la legibilidad */
+  }
+}
