@@ -49,9 +49,9 @@
   color: white;
 }
 
-.carrito{
-  width: 40px;
-  height: 40px;
+.botonCarrito{
+  width: 50px;
+  height: 50px;
   margin-left: 50%;
 }
 
@@ -132,3 +132,76 @@
   font-style: italic;
 }
 
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 150px;
+    margin-left: 15px;
+  }
+
+  .barraBusqueda {
+    margin-left: 5%;
+    max-width: 300px;
+  }
+
+  .botonCarrito {
+    width: 35px;
+    height: 35px;
+    margin-left: 30%;
+  }
+
+  .menuInferior {
+    font-size: 14px;
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+  .contenedorBarra{
+    width: 100%;
+  }
+  
+  .barraSuperior {
+    width: 100%;
+    background-color: #85CA83; 
+    padding: 6px 0;
+  }
+  
+  .encabezado {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  } 
+
+  .encabezado {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 10px;
+    max-width: 100px;
+  }
+
+  .barraBusqueda {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .botonCarrito {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .menuInferior {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .enlaceMenu {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+}

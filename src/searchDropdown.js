@@ -1,8 +1,8 @@
-// searchDropdown.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './css/searchDrop.module.css';
 
-const SearchDropdown = ({ searchResults, handleResultClick, styles }) => {
+const SearchDropdown = ({ searchResults, handleResultClick }) => {
   return (
     <div className={styles.dropdown}>
       {searchResults.length > 0 ? (

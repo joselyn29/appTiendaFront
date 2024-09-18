@@ -145,11 +145,11 @@ const Checkout = () => {
     <div>
       <BarraPrincipal />
       <div className={styles.checkoutContainer}>
-        <h2 className={styles.titulo}>Finalizar compra</h2>
+        <h2 className={styles.tituloFinalizar}>Finalizar compra</h2>
         <div className={styles.checkoutContent}>
           {/* Formulario de facturación */}
           <form className={styles.billingForm} onSubmit={handleSubmit}>
-            <h3>Información de compra</h3>
+            <h3 className={styles.subtitulosFinalizar}>Información de compra</h3>
             <div className={styles.formGroup}>
               <label>Nombre *</label>
               <input
@@ -252,7 +252,7 @@ const Checkout = () => {
 
           {/* Resumen del pedido */}
           <div className={styles.orderSummary}>
-            <h3>Tu pedido</h3>
+            <h3 className={styles.subtitulosFinalizar}>Tu pedido</h3>
             <table>
               <tbody>
                 <tr>
@@ -272,7 +272,7 @@ const Checkout = () => {
 
             {/* Opciones de pago */}
             <div className={styles.paymentOptions}>
-              <h4>Opciones de pago</h4>
+              <h4 className={styles.subtitulosFinalizar}>Opciones de pago</h4>
               <label>
                 <input
                   type="radio"

@@ -1,8 +1,8 @@
 import React from 'react';
-import { CiSearch } from "react-icons/ci";
 import SearchDropdown from './searchDropdown';
+import styles from './css/searchBar.module.css';
 
-const SearchBar = ({ searchTerm, handleInputChange, showDropdown, searchResults, handleResultClick, styles }) => {
+const SearchBar = ({ searchTerm, handleInputChange, showDropdown, searchResults, handleResultClick }) => {
   return (
     <div className={styles.relativeContainer}>
       <form className={`d-flex ${styles.searchForm}`} role="search" onSubmit={(e) => e.preventDefault()}>
@@ -14,9 +14,6 @@ const SearchBar = ({ searchTerm, handleInputChange, showDropdown, searchResults,
           value={searchTerm}
           onChange={handleInputChange}
         />
-        <button className={`btn ${styles.btnBusqueda}`} type="submit">
-          <CiSearch size={24} color='white' />
-        </button>
       </form>
       {showDropdown && (
         <SearchDropdown

@@ -45,12 +45,14 @@
   margin: 5px 0;
 }
 
-.wppIcon {
-  width: 24px;
-  height: auto;
-  vertical-align: middle;
+.whatsappLink {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Hereda el color del texto del elemento padre */
 }
 
+.whatsappLink:hover {
+  color: black; /* Cambia el color al pasar el mouse, opcional */
+}
 /* Media queries para responsive */
 
 /* Pantallas pequeñas (móviles) */

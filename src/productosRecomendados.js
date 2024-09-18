@@ -58,6 +58,17 @@ const ProductosRecomendados = ({ productos, maxProductos }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + productos.length) % productos.length);
   };
 
+  const calculateDiscount = (originalPrice, discountedPrice) => {
+    const original = parseFloat(originalPrice);
+    const discounted = parseFloat(discountedPrice);
+    if (isNaN(original) || isNaN(discounted) || original === 0) return 0;
+    return Math.round(((original - discounted) / original) * 100);
+  };
+  
+  const originalPrice = productos.precio || 0;
+  const discountedPrice = productos.precio_final || originalPrice;
+  const discountPercentage = calculateDiscount(originalPrice, discountedPrice);
+  
   return (
     <div className={styles.recomendadosContainer}>
       <h2 className={styles.tituloRelacionado}>Productos Relacionados</h2>
@@ -66,6 +77,11 @@ const ProductosRecomendados = ({ productos, maxProductos }) => {
         <div className={styles.carouselTrack} style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}>
           {productos.slice(0, maxProductos).map(produ => (
             <div className={`card ${styles.cardProducto}`} key={produ.id}>
+              {produ.en_oferta && (
+                <div className={styles.offerTag}>
+                  <span>{discountPercentage}% OFF</span>
+                </div>
+              )}
               <Link to={`/productos/${produ.id}`}>
                 <img src={produ.imagen_url} className={styles.cardImg} alt={produ.nombre} />
               </Link>
@@ -73,7 +89,16 @@ const ProductosRecomendados = ({ productos, maxProductos }) => {
                 <Link to={`/productos/${produ.id}`} style={{ textDecoration: 'none', color: 'green', fontWeight: 'bold', fontSize: '26px' }}>
                   {produ.nombre}
                 </Link>
-                <p className={styles.cardPrecio}>{formatPrice(produ.precio)}</p>
+                <div className={styles.priceContainer}>
+                  {produ.en_oferta ? (
+                    <>
+                      <p className={styles.cardPrecioOriginal}>{formatPrice(produ.precio)}</p>
+                      <p className={styles.cardPrecioDescuento}>{formatPrice(produ.precio_final)}</p>
+                    </>
+                  ) : (
+                    <p className={styles.cardPrecio}>{formatPrice(produ.precio)}</p>
+                  )}
+                </div>
                 <div className={styles.buttonContainer}>
                   <button className={styles.botonRecomendaciones} onClick={() => handleAddToCart(produ)}>
                     Añadir al Carrito

@@ -17,11 +17,17 @@ import DetalleProducto from './detalleProducto';
 import FormProductos from './formProductos';
 import Login from './login';
 import TerminosCondiciones from './terminosCondiciones';
-import PrivacyPolicy from './privacyPolicy';
 import ShippingPolicy from './shippingPolicy';
 import Contacto from './contacto';
-import Ofertas from './productosOferta';
+import Ofertas from './ofertasMostrar';
 import Alimentos from './alimentos';
+import Cosmeticos from './cosmeticosNaturales';
+import Esencias from './esenciasFlorales';
+import Homeopaticos from './homeopaticos';
+import Fitoterapeuticos from './fitoterapeuticos';
+import Medicamentos from './medicamentos';
+import SuplementosDietarios from './suplementosDietarios';
+import Aromaterapia from './aromaterapia';
 
 function App() {
   return (
@@ -37,11 +43,17 @@ function App() {
             <Route path="/productos/:id" element={<DetalleProducto />} />
             <Route path="/carrito/checkout" element={<Checkout />} />
             <Route path="/terminos-condiciones" element={<TerminosCondiciones/>}/>
-            <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
             <Route path="/shipping-policy" element={<ShippingPolicy/>} />
             <Route path="/contacto" element={<Contacto/>} />
             <Route path="/ofertas" element={<Ofertas/>} />
             <Route path="/alimentos" element={<Alimentos/>} />
+            <Route path="/cosmeticos-naturales" element={<Cosmeticos/>} />
+            <Route path="/esencias-florales" element={<Esencias/>} />
+            <Route path="/homeopaticos" element={<Homeopaticos/>} />
+            <Route path="/fitoterapeuticos" element={<Fitoterapeuticos/>} />
+            <Route path="/medicamentos" element={<Medicamentos/>} />
+            <Route path="/suplementos-dietarios" element={<SuplementosDietarios/>} />
+            <Route path="/aromaterapia" element={<Aromaterapia/>} />
 
             {/* Rutas Protegidas para el Admin */}
             <Route path="/add" element={

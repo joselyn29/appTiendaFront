@@ -1,18 +1,29 @@
 /* productosRecomendados.module.css */
 
 /* Contenedor de las tarjetas */
+.containerGrande {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+}
+
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 20px;
 }
 
-.menuCategorias {
-  flex: 1; /* Ajusta el espacio que ocupa el menú */
+.containerMenuCategorias {
+  flex: 1;
+  max-width: 250px;
   padding: 10px;
 }
 
+
 .productosSection {
-  flex: 3; /* Ajusta el espacio que ocupan los productos */
+  flex: 3; 
+  padding: 10px;
 }
 
 .tituloCategoria{
@@ -104,13 +115,21 @@
   background-color: #2ac725;
 }
 
-
-
 /* Media Query para pantallas medianas (tablets) */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .row {
-    flex-direction: row; /* Mantiene las tarjetas en fila */
-    justify-content: space-between; /* Asegura espacio entre las tarjetas */
+@media (max-width: 1023px) and (min-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .containerMenuCategorias {
+    max-width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .productosSection {
+    order: 2;
+    width: 100%;
   }
 
   .cardImg {
@@ -123,7 +142,34 @@
 }
 
 /* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 426px) {
+  .containerGrande {
+    flex-direction: column; /* El menú se posiciona encima de los productos */
+  }
+  
+  .containerMenuCategorias {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .productosSection {
+    width: 100%;
+    order: 0;
+  }
+
+  .tituloCategoria{
+    font-size: 1.9rem;
+  }
+  .cajaOrdenar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
   .row {
     flex-direction: column; /* Cambia la dirección del flex a columna en dispositivos pequeños */
     align-items: center; /* Centra las tarjetas en la columna */
@@ -133,3 +179,4 @@
     font-size: 16px;
   }
 }
+

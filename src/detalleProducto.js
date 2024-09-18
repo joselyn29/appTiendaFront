@@ -87,14 +87,29 @@ const DetalleProducto = () => {
     return numericRating.toFixed(1); // Devuelve la calificación formateada con un decimal
   };
 
+  const calculateDiscount = (originalPrice, discountedPrice) => {
+    const original = parseFloat(originalPrice);
+    const discounted = parseFloat(discountedPrice);
+    if (isNaN(original) || isNaN(discounted) || original === 0) return 0;
+    return Math.round(((original - discounted) / original) * 100);
+  };
+
   if (!producto) return <p>Cargando...</p>;
+
+  const originalPrice = producto.precio || 0;
+  const discountedPrice = producto.precio_final || originalPrice;
+  const discountPercentage = producto.en_oferta ? calculateDiscount(originalPrice, discountedPrice) : 0;
 
   return (
     <div>
       <BarraPrincipal />
       <div className={styles.detalleProductoContainer}>
-        {/* Columna de la imagen */}
         <div className={styles.columnaImagen}>
+          {producto.en_oferta && (
+            <div className={styles.cuadroDescuento}>
+              {discountPercentage}% OFF
+            </div>
+          )}
           <img
             src={producto.imagen_url}
             alt={producto.nombre}
@@ -102,30 +117,33 @@ const DetalleProducto = () => {
           />
         </div>
 
-        {/* Columna de la información del producto */}
         <div className={styles.columnaInfo}>
           <h2 className={styles.productTitle}>{producto.nombre}</h2>
           <p className={styles.descripcion}>{producto.descripcion}</p>
-          <h3 className={`text-success fw-bold ${styles.precio}`}>{formatPrice(producto.precio)}</h3>
+          {producto.en_oferta ? (
+            <div className={styles.precioContainer}>
+              <h3 className={styles.precioDescuento}>{formatPrice(discountedPrice)}</h3>
+              <h4 className={styles.precioOriginal}>{formatPrice(originalPrice)}</h4>
+            </div>
+          ) : (
+            <h3 className={`text-success fw-bold ${styles.precio}`}>{formatPrice(originalPrice)}</h3>
+          )}
 
-          {/* Mostrar la categoría */}
           {producto.categoria && (
             <p className={styles.categoria}>Categoría: {producto.categoria.nombre}</p>
           )}
 
-          {/* Calificación */}
           <div className={styles.ratingContainer}>
             <Rating 
               onClick={handleRatingChange}
-              ratingValue={rating} /* Deja la calificación actual */
-              size={26} /* Tamaño de las estrellas */
-              fillColor="orange" /* Color de las estrellas llenas */
-              emptyColor="gray" /* Color de las estrellas vacías */
+              ratingValue={rating}
+              size={26}
+              fillColor="orange"
+              emptyColor="gray"
             />
             <span className={styles.ratingText}>{formatRating(producto.calificacion_promedio)}</span>
           </div>
 
-          {/* Selección de cantidad */}
           <div className={styles.quantitySelector}>
             <QuantitySelector cantidad={cantidad} setCantidad={setCantidad} />
           </div>
@@ -139,7 +157,6 @@ const DetalleProducto = () => {
           </div>
         </div>
       </div>
-      {/* Mostrar productos relacionados */}
       <div className={styles.productosRelacionados}>
         <ProductosRecomendados productos={productosRelacionados} />
       </div>

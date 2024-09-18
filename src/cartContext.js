@@ -31,12 +31,22 @@ const CartProvider = ({ children }) => {
         // Si el producto ya está en el carrito, actualiza la cantidad
         return prevCart.map(item =>
           item.id === productToAdd.id
-            ? { ...item, quantity: item.quantity + (productToAdd.quantity || 1) }
+            ? {
+              ...item,
+              quantity: item.quantity + (productToAdd.quantity || 1),
+              precio: productToAdd.precio,  // Asegurarse de mantener el precio original
+              precio_final: productToAdd.precio_final
+            }
             : item
         );
       } else {
         // Si el producto no está en el carrito, añádelo con la cantidad especificada
-        return [...prevCart, { ...productToAdd, quantity: productToAdd.quantity || 1 }];
+        return [...prevCart, {
+          ...productToAdd,
+          quantity: productToAdd.quantity || 1,
+          precio: productToAdd.precio,  // Guardar el precio original
+          precio_final: productToAdd.en_oferta
+        }];
       }
     });
   };
@@ -60,7 +70,11 @@ const CartProvider = ({ children }) => {
   // Obtener el subtotal de los productos en el carrito, considerando precios con descuento
   const getSubtotal = () => {
     return cart.reduce((total, product) => {
-      const price = parseFloat(product.precio_final) || parseFloat(product.precio) || 0;
+      // Usar el precio con descuento si el producto está en oferta, de lo contrario usar el precio original
+      const price = product.precio_final && product.en_oferta
+        ? parseFloat(product.precio_final)
+        : parseFloat(product.precio) || 0;
+
       return total + price * (product.quantity || 1);
     }, 0);
   };
@@ -76,14 +90,24 @@ const CartProvider = ({ children }) => {
   const groupCartItems = () => {
     return cart.reduce((acc, item) => {
       const existingItem = acc.find(cartItem => cartItem.id === item.id);
+
       if (existingItem) {
+        // Sumar cantidades si el producto ya existe
         existingItem.quantity = (existingItem.quantity || 1) + (item.quantity || 1);
       } else {
-        acc.push({ ...item, quantity: item.quantity || 1 });
+        // Mantener tanto el precio original como el precio final
+        acc.push({
+          ...item,
+          quantity: item.quantity || 1,
+          precio: item.precio, // Precio original sin descuento
+          precio_final: item.precio_final
+        });
       }
+
       return acc;
     }, []);
   };
+
 
   // Obtener el número total de productos en el carrito
   const getTotalItems = () => {

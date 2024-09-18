@@ -23,3 +23,49 @@
   height: 25px;
   margin-left: 5px;
 }
+
+.discountLabel {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.2em;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre el precio tachado y el precio con descuento */
+}
+
+.carritoItemPriceOriginal {
+  text-decoration: line-through;
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.carritoItemPriceDiscount {
+  color: #e63946;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.carritoItemPriceVerde {
+  font-size: 1rem;
+}
+
+.carritoItemDiscount {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

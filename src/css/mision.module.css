@@ -1,93 +1,71 @@
-.misionContainer {
+.missionWrapper {
+  position: relative; /* Para permitir el uso de position: absolute en los hijos */
   display: flex;
-  flex-direction: column; /* Cambiado a columna para mejor adaptabilidad en pantallas pequeñas */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Ajustado el padding para que sea más adaptable */
-  background-color: #d8f0d5; /* Color de fondo */
+  padding: 120px;
+  background-color: #d8f0d5;
   width: 100%;
-  height: auto; /* Ajustado para permitir que el contenedor crezca según el contenido */
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
-.content {
+.textSection {
   width: 100%;
-  max-width: 800px; /* Controla el ancho máximo del contenido para una mejor legibilidad */
-  margin: 20px; /* Espacio entre secciones */
+  text-align: center;
+  justify-content: space-around;
 }
 
 .tituloMisionVision {
-  font-size: 24px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: #2b5d34;
-  margin-bottom: 10px;
-  text-align: center; /* Centra el título en pantallas pequeñas */
+  margin-bottom: 20px;
 }
 
 .textoMisionVision {
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: #3a6b44;
-  text-align: justify; /* Justifica el texto del párrafo */
 }
 
-/* Media queries para pantallas grandes */
-@media (min-width: 1024px) {
-  .misionContainer {
-    padding: 40px; /* Aumenta el padding en pantallas grandes */
-    flex-direction: row; /* Cambia a fila en pantallas grandes */
-  }
-
-  .content {
-    margin: 40px; /* Aumenta el margen en pantallas grandes */
-  }
-
-  .tituloMisionVision {
-    font-size: 28px; /* Tamaño de fuente mayor en pantallas grandes */
-  }
-
-  .textoMisionVision {
-    font-size: 18px; /* Tamaño de fuente mayor en pantallas grandes */
-  }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .misionContainer {
-    padding: 30px; /* Ajusta el padding para pantallas medianas */
-  }
-
-  .content {
-    margin: 30px; /* Ajusta el margen para pantallas medianas */
-  }
-
-  .tituloMisionVision {
-    font-size: 26px; /* Tamaño de fuente ajustado para pantallas medianas */
-  }
-
-  .textoMisionVision {
-    font-size: 16px; /* Tamaño de fuente ajustado para pantallas medianas */
-  }
+.decorativeIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 90px;
+  opacity: 0.6; /* Para que no distraiga demasiado */
 }
 
 /* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-  .misionContainer {
-    padding: 25px; /* Aumenta el padding para evitar que el contenido se vea muy cerca de los bordes */
-    width: 100%;
-    box-sizing: border-box; /* Asegúrate de que el padding se incluya en el ancho total del contenedor */
+@media (max-width: 769px) {
+  .missionWrapper {
+    flex-direction: column; /* Coloca los textos uno debajo del otro */
+    padding: 15px;
   }
 
-  .content {
-    margin: 15px; /* Aumenta el margen para proporcionar más espacio alrededor del contenido */
+  .textSection {
+    width: 100%; /* Asegura que los textos ocupen todo el ancho disponible */
+    margin-bottom: 20px; /* Añade espacio entre las secciones */
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
   }
 
   .tituloMisionVision {
-    font-size: 20px; /* Tamaño de fuente ajustado para pantallas pequeñas */
-    margin-bottom: 15px; /* Aumenta el espacio debajo del título */
+    font-size: 1.5rem;
   }
 
   .textoMisionVision {
-    font-size: 14px; /* Tamaño de fuente ajustado para pantallas pequeñas */
-    line-height: 1.8; /* Ajusta la altura de línea para mejorar la legibilidad */
+    font-size: 1rem;
+  }
+
+  .decorativeIcon {
+    max-width: 100px; /* Ajusta el tamaño del icono en pantallas pequeñas */
+    top: auto; /* Quita la alineación vertical */
+    bottom: 0; /* Coloca el icono cerca del borde inferior */
+    right: 0; /* Un pequeño margen derecho */
+    transform: translateY(0%);
   }
 }

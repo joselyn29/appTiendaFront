@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from './css/footer.module.css';
+import { FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { AiFillFacebook } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const whatsappNumber = "+573103351575"; // Número de WhatsApp
+  const whatsappMessage = "Hola, tengo una consulta."; // Mensaje predeterminado
+
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
@@ -16,29 +22,39 @@ const Footer = () => {
             <li><Link to="/nosotros">Nosotros</Link></li>
             <li><Link href="#">Tips</Link></li>
             <li><Link to="/terminos-condiciones">Términos y condiciones</Link></li>
-            <li><Link to="/privacy-policy">Política Datos Personales</Link></li>
-            <li><Link to="/shipping-policy">Política de envíos</Link></li>
+            <li><Link to="/shipping-policy">Políticas</Link></li>
             <li><Link to="/login">Administrador</Link></li>
           </ul>
         </div>
         <div className={`${styles.footerSection} ${styles.footerCategories}`}>
           <h5>Categorías</h5>
           <ul>
-            <li><Link href="#">Alimentos</Link></li>
-            <li><Link href="#">Aromaterapia</Link></li>
-            <li><Link href="#">Cosméticos naturales</Link></li>
-            <li><Link href="#">Esencias florales</Link></li>
-            <li><Link href="#">Fitoterapéuticos</Link></li>
-            <li><Link href="#">Homeopáticos</Link></li>
-            <li><Link href="#">Kit</Link></li>
-            <li><Link href="#">Medicamentos</Link></li>
-            <li><Link href="#">Suplementos dietarios</Link></li>
+            <li><Link to="/alimentos">Alimentos</Link></li>
+            <li><Link to="/cosmeticos-naturales">Cosméticos naturales </Link></li>
+            <li><Link to="/esencias-florales">Esencias florales</Link></li>
+            <li><Link to="/homeopaticos">Homeopáticos</Link></li>
+            <li><Link to="/fitoterapeuticos">Fitoterapéuticos</Link></li>
+            <li><Link to="/medicamentos">Medicamentos</Link></li>
+            <li><Link to="/suplementos-dietarios">Suplementos dietarios</Link></li>
+            <li><Link to="/aromaterapia">Aromaterapia</Link></li>
           </ul>
         </div>
         <div className={`${styles.footerSection} ${styles.footerContact}`}>
           <h5>Contacto</h5>
-          <p><strong>Oficina principal:</strong><br />Cra. 53 # 33-19. Barrio San jose Obrero - Bello</p>
-          <p><strong>Teléfono:</strong><br /><img src='https://res.cloudinary.com/dj1cegfhf/image/upload/v1725740887/wppIcon_y8ssuz.png' className={`${styles.wppIcon} img-fluid`} alt="IconoWpp" /> 3103351575</p>
+          <p><strong>Oficina principal:</strong><br />Cra. 53 # 33-19. Barrio San jose Obrero - Bello</p><br/>
+          <strong>Redes sociales:</strong>
+          <p>
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsappLink}
+            >
+              <FaWhatsapp size={24} color='green' /> 3103351575
+            </a>
+          </p>
+          <p><Link href='https://www.instagram.com/natu_deport?igsh=NmNtN2l1dzhwYWw5 '><FaInstagram size={24} color='green'/></Link> Multinaturista y Deportivo</p>
+          <p><Link href='https://www.facebook.com/share/CnWdiFo7bWc4aQG4/?mibextid=qi2Omg '></Link><AiFillFacebook size={24} color='green' />Multinaturista y Deportivo El Obrero</p>
         </div>
       </div>
     </footer>

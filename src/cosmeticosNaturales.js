@@ -23,7 +23,7 @@ const Alimento = () => {
     axios.get('http://127.0.0.1:8000/api/productos/')
       .then(response => {
         console.log(response.data);
-        const productosAlimentos = response.data.filter(producto => producto.categoria.nombre.toLowerCase() === 'alimentos');
+        const productosAlimentos = response.data.filter(producto => producto.categoria.nombre.toLowerCase() === 'cosmeticos naturales');
         setProductos(productosAlimentos);
       })
       .catch(error => console.error(error));
@@ -104,7 +104,7 @@ const Alimento = () => {
         </div>
         <div className={styles.container}>
           <div className={styles.productosSection}>
-            <h2 className={styles.tituloCategoria}>Alimentos</h2>
+            <h2 className={styles.tituloCategoria}>Cosméticos Naturales</h2>
             <div className={styles.cajaOrdenar}>
               <SortOptions sortOptions={sortOption} onSortChange={setSortOption} />
             </div>

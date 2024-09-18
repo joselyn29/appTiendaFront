@@ -77,6 +77,48 @@
   font-size: 20px;
 }
 
+.offerTag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff4d4d; /* Color de fondo del cuadro */
+  color: #fff; /* Color del texto */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10; /* Asegúrate de que esté por encima de la imagen */
+}
+
+/* Asegúrate de que el contenedor de la tarjeta tenga position: relative */
+.cardProducto {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenedor de precios */
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre los precios */
+  margin-top: 10px;
+}
+
+/* Precio con descuento */
+.cardPrecioDescuento {
+  font-size: 18px;
+  color: red;
+  font-weight: 600;
+}
+
+/* Precio original tachado */
+.cardPrecioOriginal {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+}
+
 .cardPrecio{
   font-size: 18px;
 }

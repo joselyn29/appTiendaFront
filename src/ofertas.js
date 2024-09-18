@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './css/ofertas.module.css';
-import ListarProductos from './listarProductos';
+import ProductosOferta from './productosOferta';
 
 const Kit = () => {
   return (
     <div className={styles.kitOfertas}>
-      <div className={styles.alingCenter}>
-        <h2>Kits y ofertas</h2>
-        <ListarProductos maxProductos={3} />
+      <div className={`row ${styles.alingCenter}`}>
+        <Link to="/ofertas" className={styles.linkDecoration}><h2 className={styles.tituloOfertas}>Ofertas</h2></Link >
+        <ProductosOferta limit={3} isHome={true}/>
       </div>
     </div>
   );

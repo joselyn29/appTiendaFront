@@ -1,6 +1,8 @@
 import React from 'react';
 import BarraPrincipal from './barraPrincipal';
 import { FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { AiFillFacebook } from "react-icons/ai";
 import UbicacionMapa from './ubicacion';
 import Footer from './footer';
 import styles from './css/contacto.module.css';
@@ -13,7 +15,7 @@ const Contacto = () => {
     <div>
       <BarraPrincipal />
       <div className={`container mt-4 ${styles.container}`}>
-        <h1 className={`${styles.colorTitulo} text-center mb-5`}>Contacto</h1>
+        <h1 className={`${styles.tituloContacto} text-center mb-5`}>Contacto</h1>
 
         <div className="row">
 
@@ -22,8 +24,8 @@ const Contacto = () => {
             <div className={styles.card}>
               <h2 className={styles.colorTitulo}>Información de Contacto</h2>
               <p><strong>Sede principal:</strong> Cra. 53 # 33 - 19 San Jose Obrero - Bello</p>
+              <p><strong>Redes sociales:</strong></p>
               <p>
-                <strong>WhatsApp: </strong>
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
                   target="_blank"
@@ -33,6 +35,8 @@ const Contacto = () => {
                   <FaWhatsapp size={24} color='green' /> 3103351575
                 </a>
               </p>
+              <p><a href='https://www.instagram.com/natu_deport?igsh=NmNtN2l1dzhwYWw5 '><FaInstagram size={24} color='green'/></a> Multinaturista y Deportivo</p>
+              <p><a href='https://www.facebook.com/share/CnWdiFo7bWc4aQG4/?mibextid=qi2Omg '></a><AiFillFacebook size={24} color='green' />Multinaturista y Deportivo El Obrero</p>
             </div>
 
             {/* Tabla Informativa debajo de Información de Contacto */}

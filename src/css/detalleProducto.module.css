@@ -10,6 +10,7 @@
 
 /* Columna de la imagen */
 .columnaImagen {
+  position: relative;
   flex: 1;
   max-width: 50%; /* Limita el tamaño de la columna de la imagen */
   display: flex;
@@ -46,6 +47,47 @@
   margin-bottom: 20px;
 }
 
+.precioContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.descuentoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cuadroDescuento {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background-color: #ff4d4d; /* Color de fondo para el cuadro de descuento */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 10px;
+  z-index: 10;
+}
+
+.precioDescuento {
+  color: #ff4d4d; /* Color para el precio con descuento */
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.precioOriginal {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 18px;
+}
+
+
 /* Precio del producto */
 .precio {
   font-size: 30px;
@@ -71,6 +113,11 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+
+.ratingContainer {
+  margin-top: 10px;
+}
+
 
 /* Input de cantidad */
 .quantityInput {

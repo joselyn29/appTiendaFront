@@ -17,6 +17,21 @@
   text-align: center;
 }
 
+.tituloOfertas{
+  font-size: 35px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  text-decoration-line: none;
+  display: flex;
+  justify-content: center;
+  color: #0B513B;
+}
+
+.linkDecoration {
+  text-decoration: none;
+  color: inherit; /* Para heredar el color del texto circundante */
+}
+
 @media (max-width: 768px) {
   .kitOfertas{
     width: 100%;

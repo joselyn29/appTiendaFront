@@ -1,94 +1,77 @@
-/* Estructura básica del contenedor principal */
 .principalCategorias {
-  width: 100%;
-  margin-top: 20px;
-  text-align: center; /* Centra el contenido */
+  margin-top: 50px;
 }
 
-/* Estilo del título */
+/* Centra el título en todas las pantallas */
 .tituloCategoria {
   display: flex;
   justify-content: center;
   color: #0B513B;
-  font-size: 2rem;
+  font-size: 40px;
+  margin-top: 50px;
 }
 
-/* Grid principal para las categorías */
-.categoriasGrid {
+.categorias {
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas grandes */
-  gap: 5px; /* Reduce el espacio entre las imágenes */
-  max-width: 1200px;
-  margin: 0 auto; /* Centra el grid */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* Asegura que las categorías se reorganicen en pantallas pequeñas */
+  gap: 79px;
+  transform: scale(0.80);
 }
 
-/* Estilo de las imágenes */
-.categoriaImg {
-  width: 60%; /* Aumenta ligeramente el tamaño de las imágenes */
-  height: auto;
-  object-fit: cover; /* Mantiene proporciones sin distorsionar */
-  display: block;
-  margin: 0 auto; /* Centra la imagen */
-  padding: 5px; /* Agrega un pequeño relleno alrededor de las imágenes */
-}
-
-/* Estilos responsivos para pantallas pequeñas */
+/* Estilos para pantallas pequeñas */
 @media (max-width: 576px) {
   .principalCategorias {
-    margin-top: 20px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    /* Reduce el margen superior en pantallas pequeñas */
   }
 
-  h2 {
+  .tituloCategoria {
     font-size: 1.5rem;
+    /* Reduce el tamaño del texto */
   }
 
-  .categoriasGrid {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    gap: 5px; /* Reduce más el espacio entre las imágenes */
+  .categorias {
+    margin-top: 10px;
+    /* Reduce el margen superior en pantallas pequeñas */
+    gap: 10px;
+    /* Ajusta el espacio entre categorías */
   }
 
-  .categoriaImg {
-    width: 75%; /* Aumenta el ancho en pantallas pequeñas */
+  .categorias img {
+    flex-basis: calc(50% - 70px);
+    /* Cada categoría ocupa el 50% del ancho del contenedor */
   }
 }
 
 /* Estilos para pantallas medianas */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (min-width: 477px) and (max-width: 768px) {
   .principalCategorias {
-    margin-top: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Ajuste intermedio */
   }
 
-  h2 {
+  .tituloCategoria {
     font-size: 1.75rem;
+    /* Ajusta el tamaño del texto */
   }
 
-  .categoriasGrid {
-    grid-template-columns: repeat(4, 1fr); /* Tres columnas */
-    gap: 5px; /* Mantiene el espacio reducido entre imágenes */
+  .categorias {
+    margin-top: 20px;
+    /* Ajuste intermedio */
+    gap: 40px;
+    /* Ajuste del espacio en pantallas medianas */
   }
 
-  .categoriaImg {
-    width: 60%;
-  }
-}
-
-/* Estilos para pantallas grandes */
-@media (min-width: 769px) {
-  .principalCategorias {
-    margin-top: 40px;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .categoriasGrid {
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
-    gap: 5px; /* Reduce el espacio entre las imágenes */
-  }
-
-  .categoriaImg {
-    width: 50%;
+  .categorias img {
+    flex-basis: calc(50% - 70px);
+    /* Cada categoría ocupa el 50% con un margen ajustado */
   }
 }
