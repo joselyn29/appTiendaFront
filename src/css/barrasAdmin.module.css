@@ -113,7 +113,7 @@ html {
 
 .barraSuperior {
     display: flex;
-    background-color: #6ad36f;
+    background-color: #ffffff;
     flex-direction: column;
     height: 20%;
     border-style: solid;
@@ -122,11 +122,7 @@ html {
     border-left: none;
     border-right: none;
     border-top: none;
-    border-radius: 10px;
-    /* background-color: #ffffff; Fondo verde suave */
-    /* border-radius: 10px; Bordes redondeados para suavizar el diseño */
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); Sombra ligera */
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave inferior */
 }
 
 .espacioBarraSuperior{
@@ -266,7 +262,16 @@ html {
     display: none;
 }
 
+
+/* ********************************* primera media */
+
 @media (max-width: 1540px) {
+
+    /* .barraSuperior {
+        
+    
+    } */
+    
 
     .logoTienda {
         width: 10%;

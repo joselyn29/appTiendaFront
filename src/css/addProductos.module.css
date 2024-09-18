@@ -52,20 +52,23 @@
 .btnSubmit {
     padding: 0.5rem;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
+    border: none;
     border-radius: 0.5rem;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 40%;
     height: 5%;
+    color: #ffffff;
+    background-color: #80b155;
+
 }
 
 .btnSubmit:hover {
     color: #ffffff;
-    background-color: #1c822d;
+    background-color: #498428;
 }
 
 .imagePreview {
@@ -97,6 +100,66 @@
 .btnDelete:hover {
     background-color: #c82333;
 }
+
+/* ESTE ES EL ESTILO DE LOS BOTONES DE LAS OFERTAS  */
+.switchContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.switchLabel {
+    font-size: 1rem;
+    color: #333;
+}
+
+.switchButton {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.switchButton.active {
+    background-color: #80b155;
+    color: white;
+    border-color: #80b155;
+}
+
+.switchButton.inactive {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* Alert.module.css */
+.alert {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+  }
+  
+  .alertWarning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+  }
+  .alertSuccess{
+    color: #228504;
+    background-color: #d1ffc5;
+    border-color: #cdffba;
+
+  }
+
+
 
 /* Responsive styles */
 @media (max-width: 768px) {

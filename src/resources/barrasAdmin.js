@@ -9,7 +9,7 @@ import { useAuth } from '../authContext'; //Para botón de cerrar sesión
 import { useNavigate } from 'react-router-dom'; //Para botón de cerrar sesión
 import logo from '../imagenes/logoTienda.jpg';
 import Categorias from './categorias';
-
+import EditarProductos from './EditarProductos';
 
 
 
@@ -30,9 +30,12 @@ const BarrasAdmin = () => {
         console.log(sidebarVisible)
     };
 
-    console.log(categoriaSeleccionada)
+    //MANEJAR EL EDITAR... MANIPULACIÓN DEL ID ENVIADO DESDE LISTAR PRODUCTOS **************************
+   
 
 
+
+    //MANDANDO ID DE CATEGORÍAS ***********************************************************************
     const estadoCategoria = (cate) => {
         setCategoriaSeleccionada(cate);
         handleItemClick('Categorías');
@@ -59,6 +62,7 @@ const BarrasAdmin = () => {
     // Al dar click cambia el estado del componente
     const handleItemClick = (component) => {
         setCurrentComponent(component);
+        toggleSidebar(false)
     };
     // console.log(vista)
     const renderContent = () => {
@@ -70,11 +74,12 @@ const BarrasAdmin = () => {
 
             case 'Categorías':
                 return <Categorias categoriaEnv={categoriaSeleccionada} />;
+
+
             default:
                 return <ListarProductos />;
         }
     };
-    console.log(currentComponent)
 
 
     //OBTENER CATEGORÍAS - ----------------
@@ -112,7 +117,7 @@ const BarrasAdmin = () => {
                     </div>
                     <div className={styles.contItems}>
                         <div className="d-flex flex-column mb-3">
-                            <div className={styles.itemsL}><div className={styles.contIconItem} onClick={() => handleItemClick('Todos los productos')}><i className="bi bi-bag-check"></i>Home</div></div>
+                            <div className={styles.itemsL}><div className={styles.contIconItem} onClick={() => handleItemClick('Todos los productos')} ><i className="bi bi-bag-check"></i>Home</div></div>
                             <div className={styles.itemsL}><div className={styles.contIconItem} onClick={() => handleItemClick('Agregar')}><i className="bi bi-box2-heart"></i>Productos</div></div>
                             <div className={styles.itemsL}><div className={styles.contIconItem}><i className="bi bi-clipboard-data"></i>Estadísticas</div></div>
                         </div>
@@ -191,9 +196,9 @@ const BarrasAdmin = () => {
 
 
 
-                            {/* Sección de selección categoría en tamaño pequeño */}
+                            {/* Sección de selección categoría en tamaño pequeño
                             <div className={`form-group mb-3 ${styles.categoriaPequeña}`}>
-                                {/* <label htmlFor="categoria">Categoría del Producto</label> */}
+                                {/* <label htmlFor="categoria">Categoría del Producto</label> 
                                 <select
                                     className="form-control input-custom"
                                     id="categoria"
@@ -206,7 +211,7 @@ const BarrasAdmin = () => {
                                         <option key={cat.id} value={cat.id}>{cat.nombre}</option>
                                     ))}
                                 </select>
-                            </div>
+                            </div> */}
                         </div>
 
                     )}

@@ -30,7 +30,7 @@
 }
 
 .cajaCategorias tr:hover td {
-    background-color: #5adc67ad; /* Fondo verde claro cuando se pasa el mouse sobre la fila */
+    background-color: #a4ff70ad; /* Fondo verde claro cuando se pasa el mouse sobre la fila */
 }
 
 .cajaCategorias button {
@@ -43,9 +43,9 @@
     font-size: 14px;
 }
 
-.cajaCategorias button:hover {
-    background-color: #4fbc5c; /* Color más oscuro al pasar el mouse */
-}
+/* .cajaCategorias button:hover {
+    background-color: #9df376; /* Color más oscuro al pasar el mouse 
+} */
 
 .cajaCategorias button:focus {
     outline: none;

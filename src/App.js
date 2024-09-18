@@ -12,7 +12,7 @@ import ProtectedRoute from './protectedRoute'; // Ruta protegida
 import Login from './login';
 import BarrasAdmin from './resources/barrasAdmin.js';
 import FormProductos from './formProductos';
-import EditarProductos from './EditarProductos.js';
+import EditarProductos from './resources/EditarProductos.js';
 
 
 

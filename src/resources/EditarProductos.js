@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import BarrasAdmin from './resources/barrasAdmin';
+import BarrasAdmin from './barrasAdmin';
 const EditarProductos = () => {
   const [producto, setProducto] = useState(null);
-  const { id } = useParams();
 
-  useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/productos/${id}/`)
-      .then(response => setProducto(response.data))
-      .catch(error => console.error(error));
-  }, [id]);
+  // useEffect(() => {
+  //   axios.get(`http://127.0.0.1:8000/api/productos/${id}/`)
+  //     .then(response => setProducto(response.data))
+  //     .catch(error => console.error(error));
+  // }, [id]);
 
-  if (!producto) return <p className="text-center">Cargando...</p>;
+  // if (!producto) return <p className="text-center">Cargando...</p>;
 
   return (
-    <div>
-      <BarrasAdmin/>
-      <div className="container mt-5">
+    <div> EDITAR
+      {/* <div className="container mt-5">
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <div className="card">
@@ -42,7 +40,7 @@ const EditarProductos = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

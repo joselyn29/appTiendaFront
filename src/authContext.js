@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [refreshToken, setRefreshToken] = useState(localStorage.getItem('refreshToken') || '');
   const [error, setError] = useState(null);
 
-  const inactivityTime = 2 * 60 * 1000; 
+  const inactivityTime = 20 * 60 * 1000; 
 
   useEffect(() => {
     const handleInactivity = () => {
